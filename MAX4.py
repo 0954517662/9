@@ -384,6 +384,7 @@ def help():
 ╠ ✯͜͡❂Listadmin
 ╠ ✯͜͡❂Status
 ╠ ✯͜͡❂Sider「on/off」
+╠ ✯͜͡❂Mytoken
 ╠══════════════════
 ╠ ✯͜͡❂ CREATOR:MAXSY
 ╚══════════════════
@@ -500,6 +501,7 @@ def helpsetting():
 ╠ ✯͜͡❂Contact「on/off」
 ╠ ✯͜͡❂Jointicket「on/off」
 ╠ ✯͜͡❂Respon「on/off」
+╠ ✯͜͡❂Respongift「on/off」
 ╠ ✯͜͡❂Unsend「on/off」
 ╠ ✯͜͡❂Welcome「on/off」
 ╠══════════════════
@@ -2007,7 +2009,61 @@ def bot(op):
                                 kc.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
 #===========BOT UPDATE============#
-                        elif cmd == "m" or text.lower() == 'hai':
+                        elif cmd == "แม็ค" or text.lower() == 'hai':
+                          if wait["selfbot"] == True:
+                               group = aditmadzs.getGroup(msg.to)
+                               nama = [contact.mid for contact in group.members]
+                               nm1, nm2, nm3, nm4, jml = [], [], [], [], len(nama)
+                               if jml <= 20:
+                                   mentionMembers(msg.to, nama)
+                               if jml > 20 and jml < 40:
+                                   for i in range (0, 20):
+                                       nm1 += [nama[i]]
+                                   mentionMembers(msg.to, nm1)
+                                   for j in range (20, len(nama)-1):
+                                       nm2 += [nama[j]]
+                                   mentionMembers(msg.to, nm2)
+                               if jml > 40 and jml < 60:
+                                   for i in range (0, 20):
+                                       nm1 += [nama[i]]
+                                   mentionMembers(msg.to, nm1)
+                                   for j in range (20, 40):
+                                       nm2 += [nama[j]]
+                                   mentionMembers(msg.to, nm2)
+                                   for k in range (40, len(nama)-1):
+                                       nm3 += [nama[k]]
+                                   mentionMembers(msg.to, nm3)
+                               if jml > 60 and jml < 80:
+                                   for i in range (0, 20):
+                                       nm1 += [nama[i]]
+                                   mentionMembers(msg.to, nm1)
+                                   for j in range (20, 40):
+                                       nm2 += [nama[j]]
+                                   mentionMembers(msg.to, nm2)
+                                   for k in range (40, 60):
+                                       nm3 += [nama[k]]
+                                   mentionMembers(msg.to, nm3)
+                                   for l in range (80, len(nama)-1):
+                                       nm4 += [nama[l]]
+                                   mentionMembers(msg.to, nm4)
+                               if jml > 80 and jml < 100:
+                                   for i in range (0, 20):
+                                       nm1 += [nama[i]]
+                                   mentionMembers(msg.to, nm1)
+                                   for j in range (20, 40):
+                                       nm2 += [nama[j]]
+                                   mentionMembers(msg.to, nm2)
+                                   for k in range (40, 60):
+                                       nm3 += [nama[k]]
+                                   mentionMembers(msg.to, nm3)
+                                   for l in range (60, 80):
+                                       nm4 += [nama[l]]
+                                   mentionMembers(msg.to, nm4)
+                                   for m in range (80, len(nama)-1):
+                                       nm5 += [nama[m]]
+                                   mentionMembers(msg.to, nm4)
+
+                        elif cmd == "😈" or text.lower() == '😆':
                           if wait["selfbot"] == True:
                                group = aditmadzs.getGroup(msg.to)
                                nama = [contact.mid for contact in group.members]
@@ -2196,6 +2252,45 @@ def bot(op):
                                 G = aditmadzs.getGroup(msg.to)
                                 aditmadzs.sendText(msg.to, "Bye bye fams "+str(G.name))
                                 aditmadzs.leaveGroup(msg.to)
+
+                        elif cmd == "assist1":
+                            if msg._from in admin:
+                                G = aditmadzs.getGroup(msg.to)
+                                ginfo = aditmadzs.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                aditmadzs.updateGroup(G)
+                                invsend = 0
+                                Ticket = aditmadzs.reissueGroupTicket(msg.to)
+                                ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = ki.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                ki.updateGroup(G)
+
+                        elif cmd == "assist1":
+                            if msg._from in admin:
+                                G = aditmadzs.getGroup(msg.to)
+                                ginfo = aditmadzs.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                aditmadzs.updateGroup(G)
+                                invsend = 0
+                                Ticket = aditmadzs.reissueGroupTicket(msg.to)
+                                kk.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kk.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kk.updateGroup(G)
+
+                        elif cmd == "assist1":
+                            if msg._from in admin:
+                                G = aditmadzs.getGroup(msg.to)
+                                ginfo = aditmadzs.getGroup(msg.to)
+                                G.preventedJoinByTicket = False
+                                aditmadzs.updateGroup(G)
+                                invsend = 0
+                                Ticket = aditmadzs.reissueGroupTicket(msg.to)
+                                kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = kc.getGroup(msg.to)
+                                G.preventedJoinByTicket = True
+                                kc.updateGroup(G)
 
                         elif cmd == "sprespon":
                           if wait["selfbot"] == True:
@@ -2431,6 +2526,14 @@ def bot(op):
                                       kk.sendMessage(midd, str(Setmain["ADITMADZSmessage"]))
                                       kc.sendMessage(midd, str(Setmain["ADITMADZSmessage"]))
 
+                        elif 'Mytoken' in msg.text:
+                          if wait["selfbot"] == True:
+                           if msg._from in admin:
+                               aditmadzs.sendMessage(msg.to,"กู\n"+aditmadzs.authToken)
+                               aditmadzs.sendMessage(msg.to,"คิก1\n"+ki.authToken)
+                               aditmadzs.sendMessage(msg.to,"คิก2\n"+kk.authToken)
+                               aditmadzs.sendMessage(msg.to,"คิก3\n"+kc.authToken)
+ 
 #===========Settings============#
                         elif 'Welcome ' in msg.text:
                            if msg._from in admin:
