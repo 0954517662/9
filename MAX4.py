@@ -633,7 +633,25 @@ def bot(op):
                                                 ki.updateGroup(X)
                                                 aditmadzs.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                                     except:
-                                        pass
+                                        try:
+                                            if ki.getGroup(op.param1).preventedJoinByTicket == False:
+                                                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                    ki.reissueGroupTicket(op.param1)
+                                                    X = aditmadzs.getGroup(op.param1)
+                                                    X.preventedJoinByTicket = True
+                                                    ki.updateGroup(X)
+                                                    aditmadzs.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                        except:
+                                            try:
+                                                if kc.getGroup(op.param1).preventedJoinByTicket == False:
+                                                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                        kc.reissueGroupTicket(op.param1)
+                                                        X = aditmadzs.getGroup(op.param1)
+                                                        X.preventedJoinByTicket = True
+                                                        ki.updateGroup(X)
+                                                        aditmadzs.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                            except:
+                                                pass
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoLeave"] == True:
@@ -1600,7 +1618,7 @@ def bot(op):
                                aditmadzs.sendMessage1(msg)
 
                         elif text.lower() == "mid":
-                               cl.sendMessage(msg.to, msg._from)
+                               aditmadzs.sendMessage(msg.to, msg._from)
 
                         elif text.lower() == "mymid":
                             if msg._from in admin:
@@ -1916,6 +1934,16 @@ def bot(op):
                                    gurl = aditmadzs.reissueGroupTicket(msg.to)
                                    aditmadzs.sendMessage(msg.to, "Nama : "+str(x.name)+ "\n🇹🇭 Url grup 🇹🇭\nhttp://line.me/R/ti/g/"+gurl)
 
+                        elif cmd == "ลบรัน":
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                              ginvited = aditmadzs.getGroupIdsInvited()
+                              if ginvited != [] and ginvited != None:
+                                  for gid in ginvited:
+                                      aditmadzs.rejectGroupInvitation(gid)
+                                  aditmadzs.sendMessage(to, "Berhasil tolak sebanyak {} undangan grup".format(str(len(ginvited))))
+                              else:
+                                  aditmadzs.sendMessage(to, "Tidak ada undangan yang tertunda")
 #===========BOT UPDATE============#
                         elif cmd == "upfoto":
                           if wait["selfbot"] == True:
@@ -1979,7 +2007,7 @@ def bot(op):
                                 kc.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
 #===========BOT UPDATE============#
-                        elif cmd == "tagall" or text.lower() == 'hai':
+                        elif cmd == "m" or text.lower() == 'hai':
                           if wait["selfbot"] == True:
                                group = aditmadzs.getGroup(msg.to)
                                nama = [contact.mid for contact in group.members]
