@@ -1552,7 +1552,9 @@ def bot(op):
                                 if wait["Mentionkick"] == True: md+="┃🔰┃ ✔️ Notag「ON」\n"
                                 else: md+="┃🔰┃ ✖ Notag「OFF」\n"
                                 if wait["detectMention"] == True: md+="┃🔰┃ ✔️ Respon「ON」\n"
-                                else: md+="┃🔰┃ ✖ Respon「OFF」\n"                   
+                                else: md+="┃🔰┃ ✖ Respon「OFF」\n"
+                                if wait["detectMention"] == True: md+="┃🔰┃ ✔️ Respongift「ON」\n"
+                                else: md+="┃🔰┃ ✖ Respongift「OFF」\n"                   
                                 if wait["autoJoin"] == True: md+="┃🔰┃ ✔️ Autojoin「ON」\n"
                                 else: md+="┃🔰┃ ✖ Autojoin「OFF」\n"
                                 if settings["autoJoinTicket"] == True: md+="┃🔰┃ ✔️ Jointicket「ON」\n"
@@ -1758,10 +1760,10 @@ def bot(op):
                         elif cmd == "restart":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                               cl.sendMessage(msg.to, "Tunggu sebentar...")
+                               aditmadzs.sendMessage(msg.to, "Tunggu sebentar...")
                                Setmain["restartPoint"] = msg.to
                                restartBot()
-                               cl.sendMessage(msg.to, "Silahkan gunakan seperti semula...")
+                               aditmadzs.sendMessage(msg.to, "Silahkan gunakan seperti semula...")
                             
                         elif cmd == "runtime":
                           if wait["selfbot"] == True:
@@ -2523,7 +2525,7 @@ def bot(op):
                                          msgs = "Protect invite sudah tidak aktif"
                                     aditmadzs.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)                                                 
 
-                        elif 'Allpro ' in msg.text:
+                        elif 'All pro ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Ditpro ','')
                               if spl == 'on':
@@ -2789,6 +2791,18 @@ def bot(op):
                             if msg._from in admin:
                                 wait["detectMention"] = False
                                 aditmadzs.sendMessage(msg.to,"Auto respon dinonaktifkan")                   
+
+                        elif cmd == "respongift on" or text.lower() == 'respongift on':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                wait["Mentiongift"] = True
+                                aditmadzs.sendMessage(msg.to,"Auto respon gift diaktifkan")
+
+                        elif cmd == "respongift off" or text.lower() == 'respongift off':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                wait["Mentiongift"] = False
+                                aditmadzs.sendMessage(msg.to,"Auto respon gift dinonaktifkan")
 
                         elif cmd == "autojoin on" or text.lower() == 'autojoin on':
                           if wait["selfbot"] == True:
