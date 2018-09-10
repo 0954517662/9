@@ -798,7 +798,7 @@ def bot(op):
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        aditmadzs.sendMessage(op.param1, wait["message"])
+                        aditmadzs.sendText(op.param1, wait["message"])
                         aditmadzs.sendContact(op.param1, "u4862fe4b182b2fd194a3108e2f3662e8")
 
 #================================================================================
@@ -1784,7 +1784,14 @@ def bot(op):
                                Setmain["restartPoint"] = msg.to
                                restartBot()
                                aditmadzs.sendMessage(msg.to, "Silahkan gunakan seperti semula...")
-                            
+
+                        elif cmd == "รีบอท":
+                          if wait["selfbot"] == True:
+                            if msg._from in creator:
+                               aditmadzs.sendMessage(msg.to, "Restart Sukses Bos!...")
+                               Setmain["restartPoint"] = msg.to
+                               restartBot()
+
                         elif cmd == "runtime":
                           if wait["selfbot"] == True:
                                eltime = time.time() - mulai
