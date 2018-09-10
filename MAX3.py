@@ -384,7 +384,7 @@ def help():
 ╠ ✯͜͡❂Listadmin
 ╠ ✯͜͡❂Status
 ╠ ✯͜͡❂Sider「on/off」
-╠ ✯͜͡❂Mytoken
+╠ ✯͜͡❂My token
 ╠══════════════════
 ╠ ✯͜͡❂ CREATOR:MAXSY
 ╚══════════════════
