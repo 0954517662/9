@@ -2273,7 +2273,7 @@ def bot(op):
                                 G.preventedJoinByTicket = True
                                 ki.updateGroup(G)
 
-                        elif cmd == "assist1":
+                        elif cmd == "assist2":
                             if msg._from in admin:
                                 G = aditmadzs.getGroup(msg.to)
                                 ginfo = aditmadzs.getGroup(msg.to)
@@ -2286,7 +2286,7 @@ def bot(op):
                                 G.preventedJoinByTicket = True
                                 kk.updateGroup(G)
 
-                        elif cmd == "assist1":
+                        elif cmd == "assist3":
                             if msg._from in admin:
                                 G = aditmadzs.getGroup(msg.to)
                                 ginfo = aditmadzs.getGroup(msg.to)
